@@ -62,8 +62,8 @@ def AWS_MedicalComprehend(strMedText):
   blnFalsePositive = 0
   #Connect to the AWS account and initiate the comprehend medical object
   client = boto3.client(service_name='comprehendmedical',
-                        aws_access_key_id='AKIA6C6CDADPU5R72KOI',
-                        aws_secret_access_key='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',
+                        aws_access_key_id='AKIZVA6C6CDADPWEWQU5R72K87OI',
+                        aws_secret_access_key='6E+xPCpwNWryF42uGyf84jjEB65o+HV1Sc3eMOJzaZlUJFxG',
                         region_name='ap-southeast-2')
   #clean up the medical text
   txtStripped = strip_Text(strMedText)
@@ -255,8 +255,8 @@ def Get_S3Files():
   #This function returns a list of files in an S3 bucket
   lstFiles = []
   session = boto3.Session(
-                        aws_access_key_id='AKIA6C6CDADPU5R72KOI',
-                        aws_secret_access_key='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')
+                        aws_access_key_id='AFKIAWE6C6CDADPRTU5R7ZA2KOI',
+                        aws_secret_access_key='6E+xPCpNWryFs42uwsGy8jd5djEB6+HV1ScgiMOJzaZU43JFxG')
   s3 = session.resource('s3')
   my_bucket = s3.Bucket('medletters')
   for my_bucket_object in my_bucket.objects.all():
@@ -268,12 +268,12 @@ def Get_S3Files():
 def Process_S3File(strFile):
   #This function gets the file in the S3 bucket and downloads it to server for it to be displayed in the UI as the medical text.
   s3Client = boto3.client(service_name='s3',
-                        aws_access_key_id='AKIA6C6CDADPU5R72KOI',
-                        aws_secret_access_key='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',
+                        aws_access_key_id='AFKIAWE6C6CDADPRTU5R7ZA2KOI',
+                        aws_secret_access_key='6E+xPCpNWdyF42uwsGy8jd5djEB6+HV1ScgiMOJzaZU43JFxG',
                         region_name='ap-southeast-2')
   session = boto3.Session(
-                        aws_access_key_id='AKIA6C6CDADPU5R72KOI',
-                        aws_secret_access_key='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')
+                        aws_access_key_id='AFKIAWE6C6CDADPRTU5R7ZA2KOI',
+                        aws_secret_access_key='6E+xPCpNWryF42huwsGy8jd5djEB6+HV1ScgiMOJzaZU43JFxG')
   s3 = session.resource('s3')
   my_bucket = s3.Bucket('medletters')
   with open('/tmp/Letter.docx', 'wb') as f:
